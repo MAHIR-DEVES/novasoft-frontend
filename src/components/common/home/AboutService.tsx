@@ -6,10 +6,6 @@ import {
   Layout,
   Briefcase,
   Globe,
-  Database,
-  Server,
-  Cloud,
-  Figma,
 } from 'lucide-react';
 
 const AboutService = () => {

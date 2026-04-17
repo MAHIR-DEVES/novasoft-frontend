@@ -12,7 +12,7 @@ const page = () => {
       className="bg-gradient-to-b from-white to-[#f8f6ff] dark:bg-[#0F0B1A] transition-colors duration-300"
     >
       <Banner></Banner>
-      {/* <AboutService></AboutService> */}
+      <AboutService></AboutService>
     </div>
   );
 };
