@@ -81,7 +81,7 @@ export default function Navbar() {
                   Soft
                 </span>
                 <span className="text-xl sm:text-2xl font-light tracking-tight bg-gradient-to-r from-[#FF6B35] to-[#ff8c5a] bg-clip-text text-transparent">
-                  visionx
+                  visionix
                 </span>
               </div>
             </Link>
@@ -185,7 +185,7 @@ export default function Navbar() {
                     Soft
                   </span>
                   <span className="text-xl sm:text-2xl font-light tracking-tight bg-gradient-to-r from-[#FF6B35] to-[#ff8c5a] bg-clip-text text-transparent">
-                    visionx
+                    visionix
                   </span>
                 </div>
               </Link>
