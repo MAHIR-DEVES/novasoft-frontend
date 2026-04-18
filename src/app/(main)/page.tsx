@@ -1,8 +1,9 @@
 import AboutService from '@/components/common/home/AboutService';
 import Banner from '@/components/common/home/Banner';
+import ProjectSection from '@/components/common/home/ProjectSection';
 import React from 'react';
 
-const page = () => {
+export default function Page() {
   return (
     <div
       style={{
@@ -13,8 +14,7 @@ const page = () => {
     >
       <Banner></Banner>
       <AboutService></AboutService>
+      <ProjectSection></ProjectSection>
     </div>
   );
-};
-
-export default page;
+}
