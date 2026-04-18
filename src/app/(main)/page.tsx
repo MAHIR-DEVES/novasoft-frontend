@@ -1,5 +1,6 @@
 import AboutService from '@/components/common/home/AboutService';
 import Banner from '@/components/common/home/Banner';
+import ClientReview from '@/components/common/home/ClientReview';
 import ProjectSection from '@/components/common/home/ProjectSection';
 import React from 'react';
 
@@ -15,6 +16,7 @@ export default function Page() {
       <Banner></Banner>
       <AboutService></AboutService>
       <ProjectSection></ProjectSection>
+      <ClientReview></ClientReview>
     </div>
   );
 }
