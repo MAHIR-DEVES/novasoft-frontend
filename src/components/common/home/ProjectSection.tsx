@@ -162,7 +162,7 @@ export default function ProjectSection() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="lg:w-3/5 p-6 lg:p-8 flex flex-col justify-between">
+                <div className="lg:w-3/5 p-3 lg:p-8 flex flex-col justify-between">
                   {/* CATEGORY */}
                   <div className="mb-4">
                     <span className="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs px-3 py-1 rounded-full font-medium">
@@ -249,13 +249,13 @@ export default function ProjectSection() {
                   <div className="flex flex-row gap-3 md:justify-end items-center">
                     <Link
                       href={`/projects/${project.id}`}
-                      className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md"
+                      className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md"
                     >
                       বিস্তারিত দেখুন
                       <ArrowRight size={16} />
                     </Link>
 
-                    <button className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:border-orange-500 text-gray-700 dark:text-gray-300 hover:text-orange-500 px-4 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300">
+                    <button className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:border-orange-500 text-gray-700 dark:text-gray-300 hover:text-orange-500 px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300">
                       <ExternalLink size={16} />
                       লাইভ ডেমো
                     </button>
