@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import AdminHeader from '@/components/admin/AdminHeader';
 import Sidebar from '@/components/admin/Sidebar';
 
 export default function AdminLayout({
@@ -12,6 +13,11 @@ export default function AdminLayout({
 }) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
 
   useEffect(() => {
     const user = localStorage.getItem('admin');
@@ -51,9 +57,24 @@ export default function AdminLayout({
   }
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <div className="flex-1 p-4">{children}</div>
+    <div className="flex h-screen overflow-hidden">
+      {isSidebarOpen && (
+        <div
+          onClick={toggleSidebar}
+          className="fixed inset-0 bg-black/40 z-30 md:hidden"
+        />
+      )}
+      {/* Sidebar */}
+      <Sidebar isOpen={isSidebarOpen} />
+
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col">
+        {/* Navbar */}
+        <AdminHeader toggleSidebar={toggleSidebar} />
+
+        {/* Scrollable Content */}
+        <div className="flex-1 overflow-y-auto bg-gray-50 ">{children}</div>
+      </div>
     </div>
   );
 }
