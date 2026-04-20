@@ -41,7 +41,7 @@ const Banner = () => {
             onSubmit={handleSearch}
             className="w-full max-w-xl sm:max-w-2xl mx-auto"
           >
-            <div className="relative flex items-center bg-white dark:bg-gray-900 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 focus-within:border-[#FF6B35] focus-within:ring-2 focus-within:ring-[#FF6B35]/20 transition-all duration-300">
+            <div className="relative flex items-center bg-white dark:bg-gray-900 rounded-md shadow-md border border-gray-200 dark:border-gray-700 focus-within:border-[#FF6B35] focus-within:ring-2 focus-within:ring-[#FF6B35]/20 transition-all duration-300">
               <Search
                 className="absolute left-3 sm:left-4 text-[#FF6B35]"
                 size={18}
@@ -52,7 +52,7 @@ const Banner = () => {
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
                 placeholder="আপনার প্রয়োজনীয় সেবা খুঁজুন..."
-                className="w-full pl-10 sm:pl-11 pr-28 sm:pr-32 py-3 sm:py-4 bg-transparent rounded-xl outline-none text-gray-900 dark:text-white placeholder-gray-400 text-sm sm:text-base"
+                className="w-full pl-10 sm:pl-11 pr-28 sm:pr-32 py-3 sm:py-4 bg-transparent rounded-md outline-none text-gray-900 dark:text-white placeholder-gray-400 text-sm sm:text-base"
               />
 
               <button
