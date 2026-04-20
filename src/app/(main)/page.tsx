@@ -19,11 +19,8 @@ export default function Page() {
       <AboutService></AboutService>
       <ProjectSection></ProjectSection>
       <ClientReview></ClientReview>
-<<<<<<< HEAD
       <ServiceComparison></ServiceComparison>
       <About></About>
-=======
->>>>>>> 25ff353a40ae0e1f280d54e0cc92519f73451471
     </div>
   );
 }
