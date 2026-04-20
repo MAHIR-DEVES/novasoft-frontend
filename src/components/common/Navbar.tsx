@@ -30,9 +30,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
     { name: 'Demo', href: '/demo' },
+    { name: 'Services', href: '/services' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact-us' },
   ];
 
@@ -93,12 +93,12 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className="relative px-4 py-2 text-gray-700 dark:text-gray-300 font-medium 
-                           transition-all duration-300 hover:text-[#8B6FD8] dark:hover:text-[#c8b6ff]
+                           transition-all duration-300 hover:text-orange-500 dark:hover:text-[#c8b6ff]
                            group overflow-hidden"
                 >
                   <span className="relative z-10">{link.name}</span>
                   <span
-                    className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-[#c8b6ff] to-[#b8c0ff] 
+                    className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-orange-200 to-orange-300 
                                    transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                   />
                 </Link>

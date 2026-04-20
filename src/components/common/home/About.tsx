@@ -1,17 +1,5 @@
 import React from 'react';
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Briefcase,
-  Users,
-  Target,
-  Clock,
-  Award,
-  CheckCircle,
-  ArrowRight,
-} from 'lucide-react';
-import Link from 'next/link';
+import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 
 const About = () => {
@@ -123,7 +111,7 @@ const About = () => {
             <div>
               <p className="text-xs text-gray-500 dark:text-gray-400">ফোন</p>
               <p className="font-medium text-gray-900 dark:text-white">
-                +880 1234 567890
+                +880 1310- 520842
               </p>
             </div>
           </div>
@@ -135,7 +123,7 @@ const About = () => {
             <div>
               <p className="text-xs text-gray-500 dark:text-gray-400">ইমেইল</p>
               <p className="font-medium text-gray-900 dark:text-white">
-                support@yourcompany.com
+                softvisionix@gmail.com
               </p>
             </div>
           </div>

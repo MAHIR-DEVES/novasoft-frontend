@@ -156,7 +156,7 @@ const Footer = () => {
                     ফোন
                   </p>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">
-                    +880 1234 567890
+                    +880 1310-520842
                   </p>
                 </div>
               </div>
@@ -173,7 +173,7 @@ const Footer = () => {
                     ইমেইল
                   </p>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">
-                    devstudio@gmail.com
+                    softvisionix@gmail.com
                   </p>
                 </div>
               </div>

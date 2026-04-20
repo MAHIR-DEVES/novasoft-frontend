@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Code,
-  Smartphone,
   ShoppingCart,
   Layout,
   Briefcase,
