@@ -8,8 +8,6 @@ import {
   ShoppingBag,
   MessageSquare,
   LogOut,
-  Settings,
-  Users,
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
@@ -20,8 +18,6 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
     { name: 'Projects', href: '/admin/projects', icon: FolderKanban },
     { name: 'Orders', href: '/admin/orders', icon: ShoppingBag },
     { name: 'Messages', href: '/admin/messages', icon: MessageSquare },
-    { name: 'Users', href: '/admin/users', icon: Users },
-    { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
 
   const isActive = (href: string) => {
@@ -35,7 +31,7 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
     <aside
       className={`
         fixed top-0 left-0 z-40 h-screen
-        bg-white dark:bg-gray-900
+        bg-[#f0ede9] dark:bg-gray-900
         transition-all duration-300
         flex flex-col 
 

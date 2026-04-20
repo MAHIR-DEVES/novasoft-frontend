@@ -137,69 +137,75 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="p-4">
-        {/* Header */}
-        <div className="mb-8">
+      <div className="p-3 sm:p-4 md:p-6 lg:p-8">
+        {/* Header - Responsive */}
+        <div className="mb-6 md:mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
                 Dashboard
               </h1>
-              <p className="text-gray-600 dark:text-gray-400 mt-1">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
                 Welcome back! Here&apos;s what&apos;s happening with your
                 business today.
               </p>
             </div>
-            <div className="flex gap-3">
-              <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
-                <Calendar size={16} />
-                <span className="text-sm">This Month</span>
+            <div className="flex gap-2 sm:gap-3">
+              <button className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition text-sm sm:text-base">
+                <Calendar size={14} />
+                <span className="text-xs sm:text-sm">This Month</span>
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-[#FF6B35] text-white rounded-lg hover:bg-[#ff8c5a] transition">
-                <Download size={16} />
-                <span className="text-sm">Export</span>
+              <button className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FF6B35] text-white rounded-lg hover:bg-[#ff8c5a] transition text-sm sm:text-base">
+                <Download size={14} />
+                <span className="text-xs sm:text-sm">Export</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {/* Stats Cards - Responsive Grid */}
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-6 md:mb-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow"
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  <div className="flex-1">
+                    <p className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400">
                       {stat.title}
                     </p>
-                    <p className="text-2xl font-bold text-gray-900 dark:text-white mt-2">
+                    <p className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mt-1 sm:mt-2">
                       {stat.value}
                     </p>
-                    <div className="flex items-center gap-1 mt-2">
+                    <div className="flex flex-wrap items-center gap-1 mt-1 sm:mt-2">
                       {stat.trend === 'up' ? (
-                        <TrendingUp size={14} className="text-green-500" />
+                        <TrendingUp
+                          size={12}
+                          className="sm:size-14 text-green-500"
+                        />
                       ) : (
-                        <TrendingDown size={14} className="text-red-500" />
+                        <TrendingDown
+                          size={12}
+                          className="sm:size-14 text-red-500"
+                        />
                       )}
                       <span
                         className={`text-xs font-medium ${stat.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}
                       >
                         {stat.change}
                       </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">
                         vs last month
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`bg-gradient-to-br ${getColorClass(stat.color)} p-3 rounded-xl`}
+                    className={`bg-gradient-to-br ${getColorClass(stat.color)} p-2 sm:p-3 rounded-xl flex-shrink-0 ml-2`}
                   >
-                    <Icon size={20} className="text-white" />
+                    <Icon size={16} className="sm:size-10 text-white" />
                   </div>
                 </div>
               </div>
@@ -207,25 +213,25 @@ const Page = () => {
           })}
         </div>
 
-        {/* Charts Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        {/* Charts Row - Responsive */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 mb-6 md:mb-8">
           {/* Sales Chart */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <h2 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                 Sales Overview
               </h2>
               <button className="text-gray-400 hover:text-gray-600">
-                <MoreVertical size={16} />
+                <MoreVertical size={16} className="sm:size-18" />
               </button>
             </div>
-            <div className="h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-lg">
-              <div className="text-center">
+            <div className="h-48 sm:h-56 md:h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+              <div className="text-center px-4">
                 <FaChartLine
-                  size={40}
-                  className="text-gray-300 dark:text-gray-600 mx-auto mb-2"
+                  size={32}
+                  className="sm:size-40 text-gray-300 dark:text-gray-600 mx-auto mb-2"
                 />
-                <p className="text-gray-500 dark:text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                   Chart integration coming soon
                 </p>
               </div>
@@ -233,23 +239,26 @@ const Page = () => {
           </div>
 
           {/* Top Products */}
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <h2 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                 Top Products
               </h2>
-              <button className="text-sm text-[#FF6B35] hover:underline">
+              <button className="text-xs sm:text-sm text-[#FF6B35] hover:underline">
                 View All
               </button>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {topProducts.map((product, idx) => (
-                <div key={idx} className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <p className="font-medium text-gray-900 dark:text-white">
+                <div
+                  key={idx}
+                  className="flex items-center justify-between gap-2"
+                >
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm sm:text-base font-medium text-gray-900 dark:text-white truncate">
                       {product.name}
                     </p>
-                    <div className="flex items-center gap-4 mt-1">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-1">
                       <span className="text-xs text-gray-500 dark:text-gray-400">
                         {product.sales} sales
                       </span>
@@ -258,8 +267,8 @@ const Page = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="font-semibold text-gray-900 dark:text-white">
+                  <div className="text-right flex-shrink-0">
+                    <p className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">
                       {product.revenue}
                     </p>
                   </div>
@@ -269,37 +278,71 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Recent Orders Table */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+        {/* Recent Orders Table - Responsive */}
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <div className="p-4 sm:p-5 md:p-6 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <h2 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                 Recent Orders
               </h2>
-              <button className="text-sm text-[#FF6B35] hover:underline flex items-center gap-1">
+              <button className="text-xs sm:text-sm text-[#FF6B35] hover:underline flex items-center gap-1">
                 <FaEye size={12} />
                 View All
               </button>
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          {/* Mobile View - Card Layout */}
+          <div className="block md:hidden divide-y divide-gray-200 dark:divide-gray-700">
+            {recentOrders.map(order => (
+              <div
+                key={order.id}
+                className="p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition"
+              >
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-sm font-medium text-gray-900 dark:text-white">
+                    {order.id}
+                  </span>
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}
+                  >
+                    {getStatusIcon(order.status)}
+                    {order.status}
+                  </span>
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                  {order.customer}
+                </div>
+                <div className="flex justify-between items-center mt-2">
+                  <span className="text-xs text-gray-500 dark:text-gray-500">
+                    {order.date}
+                  </span>
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                    {order.amount}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop View - Table Layout */}
+          <div className="hidden md:block overflow-x-auto">
+            <table className="w-full min-w-[600px]">
               <thead className="bg-gray-50 dark:bg-gray-900/50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Order ID
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Customer
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Date
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Amount
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     Status
                   </th>
                 </tr>
@@ -310,21 +353,21 @@ const Page = () => {
                     key={order.id}
                     className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition"
                   >
-                    <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">
+                    <td className="px-4 py-3 text-sm font-medium text-gray-900 dark:text-white">
                       {order.id}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
+                    <td className="px-4 py-3 text-sm text-gray-600 dark:text-gray-400">
                       {order.customer}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
+                    <td className="px-4 py-3 text-sm text-gray-600 dark:text-gray-400">
                       {order.date}
                     </td>
-                    <td className="px-6 py-4 text-sm font-semibold text-gray-900 dark:text-white">
+                    <td className="px-4 py-3 text-sm font-semibold text-gray-900 dark:text-white">
                       {order.amount}
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
                       <span
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}
+                        className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}
                       >
                         {getStatusIcon(order.status)}
                         {order.status}
