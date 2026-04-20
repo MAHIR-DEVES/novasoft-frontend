@@ -146,7 +146,7 @@ export default function ProjectSection() {
               <div className="flex flex-col lg:flex-row">
                 {/* IMAGE SLIDER */}
                 <div className="lg:w-2/5 relative">
-                  <div className="relative h-64 lg:h-full min-h-[320px]">
+                  <div className="relative h-64 md:h-[280px]">
                     <ProjectImageSlider images={project.images} />
                   </div>
 
@@ -162,7 +162,7 @@ export default function ProjectSection() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="lg:w-3/5 p-3 lg:p-8 flex flex-col justify-between">
+                <div className="lg:w-3/5 p-3 lg:px-8 flex flex-col justify-between">
                   {/* CATEGORY */}
                   <div className="mb-4">
                     <span className="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs px-3 py-1 rounded-full font-medium">
@@ -193,72 +193,80 @@ export default function ProjectSection() {
                     ))}
                   </div>
 
-                  {/* PRICE & DURATION */}
-                  <div className="flex flex-wrap gap-6 mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
-                    <div className="flex items-center gap-2">
-                      <div className="p-1.5 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                        <DollarSign
-                          size={16}
-                          className="text-orange-600 dark:text-orange-400"
-                        />
+                  {/* PRICE & DURATION  & VIEW DETAILS */}
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-700 pb-4">
+                    {/* PRICE, DURATION, RATING */}
+                    <div className="flex  gap-6">
+                      {/* Price */}
+                      <div className="flex items-center gap-2">
+                        <div className="p-1.5 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+                          <DollarSign
+                            size={16}
+                            className="text-orange-600 dark:text-orange-400"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            মূল্য
+                          </p>
+                          <p className="font-bold text-gray-900 dark:text-white">
+                            {project.price}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          মূল্য
-                        </p>
-                        <p className="font-bold text-gray-900 dark:text-white">
-                          {project.price}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="p-1.5 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                        <Clock
-                          size={16}
-                          className="text-orange-600 dark:text-orange-400"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          সময়কাল
-                        </p>
-                        <p className="font-bold text-gray-900 dark:text-white">
-                          {project.duration}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="p-1.5 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
-                        <Star
-                          size={16}
-                          className="text-yellow-600 dark:text-yellow-400 fill-yellow-600"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                          রেটিং
-                        </p>
-                        <p className="font-bold text-gray-900 dark:text-white">
-                          {project.rating}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* VIEW DETAILS */}
-                  <div className="flex flex-row gap-3 md:justify-end items-center">
-                    <Link
-                      href={`/projects/${project.id}`}
-                      className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md"
-                    >
-                      বিস্তারিত দেখুন
-                      <ArrowRight size={16} />
-                    </Link>
+                      {/* Duration */}
+                      <div className="flex items-center gap-2">
+                        <div className="p-1.5 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
+                          <Clock
+                            size={16}
+                            className="text-orange-600 dark:text-orange-400"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            সময়কাল
+                          </p>
+                          <p className="font-bold text-gray-900 dark:text-white">
+                            {project.duration}
+                          </p>
+                        </div>
+                      </div>
 
-                    <button className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:border-orange-500 text-gray-700 dark:text-gray-300 hover:text-orange-500 px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300">
-                      <ExternalLink size={16} />
-                      লাইভ ডেমো
-                    </button>
+                      {/* Rating */}
+                      <div className="flex items-center gap-2">
+                        <div className="p-1.5 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+                          <Star
+                            size={16}
+                            className="text-yellow-600 dark:text-yellow-400 fill-yellow-600"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">
+                            রেটিং
+                          </p>
+                          <p className="font-bold text-gray-900 dark:text-white">
+                            {project.rating}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* VIEW DETAILS */}
+                    <div className="flex flex-row gap-3 md:justify-end items-center">
+                      <Link
+                        href={`/projects/${project.id}`}
+                        className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md"
+                      >
+                        বিস্তারিত দেখুন
+                        <ArrowRight size={16} />
+                      </Link>
+
+                      <button className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:border-orange-500 text-gray-700 dark:text-gray-300 hover:text-orange-500 px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300">
+                        <ExternalLink size={16} />
+                        লাইভ ডেমো
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

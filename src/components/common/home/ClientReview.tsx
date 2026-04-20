@@ -50,13 +50,13 @@ const ClientReview = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* HEADER */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            আমাদের
-            <span className="relative inline-block ml-2 text-orange-500">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            আমাদের{' '}
+            <span className="text-orange-500 relative inline-block">
               গ্রাহকদের মতামত
-              <span className="absolute left-0 bottom-0 w-full h-1 bg-orange-200 rounded"></span>
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-orange-200 dark:bg-orange-800 rounded"></span>
             </span>
-          </h1>
+          </h2>
 
           <p className="text-gray-600 max-w-2xl mx-auto">
             আমাদের কাজ সম্পর্কে ক্লায়েন্টরা যা বলছেন

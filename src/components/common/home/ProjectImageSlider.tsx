@@ -48,7 +48,7 @@ export default function ProjectImageSlider({ images }: { images: string[] }) {
         }}
       >
         {images.map((img, i) => (
-          <div key={i} className="w-full h-full flex-shrink-0 relative">
+          <div key={i} className="w-full h-full  flex-shrink-0 relative">
             <img
               src={img}
               alt={`Project image ${i + 1}`}
