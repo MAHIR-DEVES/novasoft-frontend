@@ -10,95 +10,32 @@ import {
 import Link from 'next/link';
 import ProjectImageSlider from './ProjectImageSlider';
 
-const projects = [
-  {
-    id: 1,
-    title: 'ই-কমার্স ওয়েবসাইট',
-    description:
-      'সম্পূর্ণ ফিচারসহ অনলাইন ই-কমার্স স্টোর তৈরি। পেমেন্ট গেটওয়ে, ইনভেন্টরি ম্যানেজমেন্ট, অর্ডার ট্র্যাকিং সহ সব আধুনিক সুবিধা।',
-    images: [
-      'https://images.unsplash.com/photo-1557821552-17105176677c',
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30',
-      'https://images.unsplash.com/photo-1563013544-824ae1b704d3',
-    ],
-    category: 'ই-কমার্স',
-    technologies: ['React.js', 'Node.js', 'MongoDB', 'Stripe'],
-    price: '৳২৫,০০০',
-    duration: '৩ মাস',
-    rating: 4.8,
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'ল্যান্ডিং পেজ ডিজাইন',
-    description:
-      'বিজনেস বা প্রোডাক্টের জন্য আধুনিক ও কনভার্টিং ল্যান্ডিং পেজ। SEO ফ্রেন্ডলি ও মোবাইল রেসপন্সিভ।',
-    images: [
-      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e',
-      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e',
-      'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e',
-    ],
-    category: 'ল্যান্ডিং পেজ',
-    technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    price: '৳৮,০০০',
-    duration: '৭-১০ দিন',
-    rating: 4.9,
-    featured: false,
-  },
-  {
-    id: 3,
-    title: 'কাস্টম ওয়েবসাইট',
-    description:
-      'আপনার ব্যবসার প্রয়োজন অনুযায়ী সম্পূর্ণ কাস্টম ওয়েবসাইট। যেকোনো ফিচার ও ফাংশনালিটি যোগ করার সুযোগ।',
-    images: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    ],
-    category: 'কাস্টম ওয়েবসাইট',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
-    price: '৳৩০,০০০',
-    duration: '১-২ মাস',
-    rating: 5.0,
-    featured: true,
-  },
-  {
-    id: 4,
-    title: 'ওয়ার্ডপ্রেস ওয়েবসাইট',
-    description:
-      'দ্রুত ও কম খরচে পেশাদার WordPress ওয়েবসাইট। ইজি কন্টেন্ট ম্যানেজমেন্ট ও এলিমেন্টর ডিজাইন।',
-    images: [
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-    ],
-    category: 'ওয়ার্ডপ্রেস',
-    technologies: ['WordPress', 'Elementor', 'WooCommerce', 'PHP'],
-    price: '৳১২,০০০',
-    duration: '৫-৭ দিন',
-    rating: 4.7,
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'মোবাইল অ্যাপ',
-    description:
-      'iOS ও Android এর জন্য ক্রস-প্ল্যাটফর্ম মোবাইল অ্যাপ। React Native দিয়ে তৈরি সুপার ফাস্ট অ্যাপ।',
-    images: [
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c',
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c',
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c',
-    ],
-    category: 'মোবাইল অ্যাপ',
-    technologies: ['React Native', 'Firebase', 'Redux', 'Node.js'],
-    price: '৳৪০,০০০',
-    duration: '২-৩ মাস',
-    rating: 4.9,
-    featured: true,
-  },
-];
+type Project = {
+  _id: string;
+  title: string;
+  description: string;
+  images: string[];
+  category: string;
+  technologies: string[];
+  price: number;
+  duration: string;
+  rating: number;
+  featured: boolean;
+  videoUrl?: string;
+};
 
-export default function ProjectSection() {
+async function getProjects() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/projects`, {
+    cache: 'no-store', // dynamic data হলে
+  });
+
+  const data = await res.json();
+
+  return data.data || data; // flexible
+}
+
+export default async function ProjectSection() {
+  const projects: Project[] = await getProjects();
   return (
     <div className="  py-0 sm:py-7">
       <div className="max-w-7xl mx-auto px-4 sm:px-0">
@@ -138,9 +75,9 @@ export default function ProjectSection() {
 
         {/* PROJECT CARDS */}
         <div className="space-y-5">
-          {projects.map((project, idx) => (
+          {projects.slice(0, 10).map(project => (
             <div
-              key={project.id}
+              key={project._id}
               className="group bg-white dark:bg-gray-800 rounded-md shadow-lg  overflow-hidden transform "
             >
               <div className="flex flex-col lg:flex-row">
@@ -255,7 +192,7 @@ export default function ProjectSection() {
                     {/* VIEW DETAILS */}
                     <div className="flex flex-row gap-3 md:justify-end items-center">
                       <Link
-                        href={`/projects/${project.id}`}
+                        href={`/projects/${project._id}`}
                         className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md"
                       >
                         বিস্তারিত দেখুন
@@ -277,7 +214,7 @@ export default function ProjectSection() {
         {/* VIEW ALL BUTTON */}
         <div className="text-center mt-12">
           <Link
-            href="/projects"
+            href="/demo"
             className="inline-flex items-center gap-2 bg-transparent border-2 border-orange-500 text-orange-600 dark:text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300"
           >
             সব প্রজেক্ট দেখুন
