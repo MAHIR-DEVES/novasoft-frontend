@@ -192,7 +192,7 @@ export default async function ProjectSection() {
                     {/* VIEW DETAILS */}
                     <div className="flex flex-row gap-3 md:justify-end items-center">
                       <Link
-                        href={`/projects/${project._id}`}
+                        href={`/demo/${project._id}`}
                         className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md"
                       >
                         বিস্তারিত দেখুন
