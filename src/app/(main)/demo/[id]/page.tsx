@@ -47,7 +47,7 @@ export default async function ProjectDetailsPage({
   console.log(project);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-7xl mx-auto px-4 md:px-0 py-10">
       {/* TITLE */}
       <h1 className="text-3xl md:text-4xl font-bold mb-4">{project.title}</h1>
 
