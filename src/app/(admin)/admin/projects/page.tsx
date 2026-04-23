@@ -28,6 +28,7 @@ type Project = {
   rating?: number;
   featured?: boolean;
   videoUrl: string;
+  liveUrl?: string;
 };
 
 type FormState = {
@@ -38,6 +39,7 @@ type FormState = {
   technologies: string;
   duration: string;
   videoUrl: string;
+  liveUrl: string;
 };
 
 // ================= API =================
@@ -68,11 +70,9 @@ const ProjectsPage = () => {
     technologies: '',
     duration: '',
     videoUrl: '',
+    liveUrl: '',
   });
-  const getYoutubeId = (url: string) => {
-    const match = url.match(/v=([^&]+)/);
-    return match ? match[1] : null;
-  };
+
   // ================= FETCH =================
   const fetchProjects = async () => {
     try {
@@ -107,6 +107,7 @@ const ProjectsPage = () => {
       technologies: '',
       duration: '',
       videoUrl: '',
+      liveUrl: '',
     });
 
     setImageFiles([]);
@@ -127,6 +128,7 @@ const ProjectsPage = () => {
       technologies: project.technologies.join(', '),
       duration: project.duration,
       videoUrl: project.videoUrl || '',
+      liveUrl: project.liveUrl || '',
     });
 
     setExistingImages(project.images);
@@ -159,6 +161,7 @@ const ProjectsPage = () => {
         technologies: form.technologies.split(',').map(t => t.trim()),
         duration: form.duration,
         videoUrl: form.videoUrl,
+        liveUrl: form.liveUrl,
         images: uploadedUrls.length ? uploadedUrls : existingImages,
         rating: 4.5,
         featured: false,
@@ -555,6 +558,20 @@ const ProjectsPage = () => {
                     value={form.videoUrl}
                     onChange={e =>
                       setForm({ ...form, videoUrl: e.target.value })
+                    }
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  />
+                </div>
+                {/* Live URL */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Live URL (optional)
+                  </label>
+                  <input
+                    placeholder="https://example.com"
+                    value={form.liveUrl}
+                    onChange={e =>
+                      setForm({ ...form, liveUrl: e.target.value })
                     }
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent dark:bg-gray-700 dark:text-white"
                   />
