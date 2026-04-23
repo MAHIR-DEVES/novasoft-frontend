@@ -22,6 +22,7 @@ type Project = {
   rating: number;
   featured: boolean;
   videoUrl?: string;
+  liveUrl?: string;
 };
 
 async function getProjects() {
@@ -199,10 +200,13 @@ export default async function ProjectSection() {
                         <ArrowRight size={16} />
                       </Link>
 
-                      <button className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:border-orange-500 text-gray-700 dark:text-gray-300 hover:text-orange-500 px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300">
-                        <ExternalLink size={16} />
-                        লাইভ ডেমো
-                      </button>
+                      <Link href={project.liveUrl || '#'} target="_blank">
+                        {' '}
+                        <button className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 hover:border-orange-500 text-gray-700 dark:text-gray-300 hover:text-orange-500 px-3 sm:px-6 py-2.5 rounded-lg font-medium transition-all duration-300">
+                          <ExternalLink size={16} />
+                          লাইভ ডেমো
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
