@@ -10,6 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Softvisionix ',
+  icons: {
+    icon: '/favicon.ico',
+  },
   description:
     'Softvisionix is a leading software development company specializing in custom solutions, web and mobile app development, and digital transformation services. We help businesses innovate and grow with cutting-edge technology.',
 };

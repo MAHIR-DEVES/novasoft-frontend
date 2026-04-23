@@ -70,9 +70,9 @@ const About = () => {
               </div>
             </div>
             <div className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 text-center">
-              <div className="text-3xl font-bold text-orange-500">৫০+</div>
+              <div className="text-3xl font-bold text-orange-500">৯৭%</div>
               <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                সন্তুষ্ট ক্লায়েন্ট
+                ক্লায়েন্ট সাকসেস রেট
               </div>
             </div>
             <div className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 text-center">
@@ -139,9 +139,9 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
           {/* CEO Card */}
-          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:shadow-lg transition-shadow">
             <div className="p-6">
               <div className="flex items-center gap-4">
                 <Image
@@ -168,7 +168,7 @@ const About = () => {
           </div>
 
           {/* COO Card */}
-          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:shadow-lg transition-shadow">
             <div className="p-6">
               <div className="flex items-center gap-4">
                 <Image
@@ -180,7 +180,7 @@ const About = () => {
                 />
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 dark:text-white">
-                    Operations Manager
+                    Mostafijur Rahman
                   </h4>
                   <p className="text-orange-500 text-sm font-medium">COO</p>
                 </div>
@@ -188,6 +188,32 @@ const About = () => {
               <p className="text-gray-600 dark:text-gray-400 text-sm mt-4 leading-relaxed">
                 প্রধান পরিচালন কর্মকর্তা। প্রজেক্ট ডেলিভারি, টিম ম্যানেজমেন্ট ও
                 ক্লায়েন্ট রিলেশন দেখেন।
+              </p>
+            </div>
+          </div>
+          {/* Marketing Manager Card */}
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="p-6">
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/images/Marketing Manager Rony.png"
+                  width={64}
+                  height={64}
+                  className="rounded-full object-cover border-2 border-orange-500"
+                  alt="Marketing Manager"
+                />
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 dark:text-white">
+                    Rony
+                  </h4>
+                  <p className="text-orange-500 text-sm font-medium">
+                    Marketing Manager
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mt-4 leading-relaxed">
+                মার্কেটিং ম্যানেজার। কোম্পানির ব্র্যান্ডিং, মার্কেটিং
+                স্ট্র্যাটেজি ও কাস্টমার অ্যাকুইজিশন দেখেন।
               </p>
             </div>
           </div>
