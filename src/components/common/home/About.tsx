@@ -139,7 +139,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
           {/* CEO Card */}
           <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md overflow-hidden hover:shadow-lg transition-shadow">
             <div className="p-6">
